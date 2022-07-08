@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "205374772343",
+    "project_id": "montserratak-76f14",
+    "storage_bucket": "montserratak-76f14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205374772343:android:e0a6813286c9517a57e272",
+        "android_client_info": {
+          "package_name": "com.example.montserratak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205374772343-uo0k3vo2pahdmucigmuckqou4rt4mij2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9ghzx5-7_MpHjsGW_fCh0wpI0rSpteOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205374772343-uo0k3vo2pahdmucigmuckqou4rt4mij2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205374772343:android:e99052c0ba40f67157e272",
+        "android_client_info": {
+          "package_name": "com.neulaworks.montserratak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205374772343-0dgcoh6shsau04e6m86ni933fitn66nb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neulaworks.montserratak",
+            "certificate_hash": "0ce5f1ddfc8a106e0f74b2d2a0247bf57096362d"
+          }
+        },
+        {
+          "client_id": "205374772343-uo0k3vo2pahdmucigmuckqou4rt4mij2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9ghzx5-7_MpHjsGW_fCh0wpI0rSpteOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205374772343-uo0k3vo2pahdmucigmuckqou4rt4mij2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

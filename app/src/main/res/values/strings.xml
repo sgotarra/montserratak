@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">montserratak</string>
+
+    <string name="BTMLOGIN">Login</string>
+    <string name="BTMREGISTRO">Registre</string>
+
 </resources>

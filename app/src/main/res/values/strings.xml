@@ -3,5 +3,11 @@
 
     <string name="BTMLOGIN">Login</string>
     <string name="BTMREGISTRO">Registre</string>
+    <string name="correoEt">E-mail</string>
+    <string name="nombreEt">Nom</string>
+    <string name="passEt">Password</string>
+    <string name="fechaTxt">Data</string>
+    <string name="Registrar">REGISTRAR</string>
+
 
 </resources>

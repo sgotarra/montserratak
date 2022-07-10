@@ -1,5 +1,6 @@
 package com.neulaworks.montserratak
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         BTMREGISTRO.setOnClickListener(){
-            Toast.makeText(this, "click botó Registre",Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "click botó Registre",Toast.LENGTH_LONG).show();
+            val intent= Intent(this, Registro::class.java)
+            startActivity(intent)
         }
 
     }

@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import java.text.SimpleDateFormat
@@ -78,7 +80,23 @@ class Registro : AppCompatActivity() {
 
     }
 
-    fun RegistrarJugador(email:String, passw:String){
+    fun RegistrarJugador (email:String, password:String)
+    {
+        this.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task: Task<AuthResult> ->
+            if (task.isSuccessful) {
+                //Registration OK
+                val firebaseUser = this.auth.currentUser!!
+                Toast.makeText( this,"createUserWithEmail:success",Toast.LENGTH_SHORT).show()
+
+            } else {
+                //Registration error
+                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+    }
+
+    fun OLDRegistrarJugador(email:String, passw:String){
         auth.createUserWithEmailAndPassword(email, passw)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -104,7 +122,7 @@ class Registro : AppCompatActivity() {
             var nombreString: String = nombreEt.getText().toString()
             var fechaString: String= fechaTxt.getText().toString()
 
-
+                //AQUI GUARDARA EL CONTINGUT A LA BASE DE DADES
 
 
         }

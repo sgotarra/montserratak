@@ -1,5 +1,6 @@
 package com.neulaworks.montserratak
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -128,7 +129,9 @@ class Registro : AppCompatActivity() {
                 Log.i ("MYTAG", uidString)
                 Log.i ("MYTAG",dadesJugador.toString())
                 reference.child(uidString).setValue(dadesJugador)
-                Toast.makeText(this, "USUARI BEN REGISTRAT", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "USUARI REGISTRAT", Toast.LENGTH_SHORT).show()
+                val intent= Intent(this, Menu::class.java)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "ERROR BD", Toast.LENGTH_SHORT).show()

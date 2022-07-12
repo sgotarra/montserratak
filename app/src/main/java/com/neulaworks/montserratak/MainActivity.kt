@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         var BTMREGISTRO = findViewById<Button>(R.id.BTMREGISTRO);
 
         BTMLOGIN.setOnClickListener(){
-            Toast.makeText(this, "click botó login",Toast.LENGTH_LONG).show();
+            val intent= Intent(this, Login::class.java)
+            startActivity(intent)
         }
 
         BTMREGISTRO.setOnClickListener(){

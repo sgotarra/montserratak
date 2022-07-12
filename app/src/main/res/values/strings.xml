@@ -9,5 +9,10 @@
     <string name="fechaTxt">Data</string>
     <string name="Registrar">REGISTRAR</string>
 
+    <string name="correoLogin">E-mail</string>
+    <string name="passLogin">Password</string>
+    <string name="BtnLogin">ENTRAR</string>
+
+
 
 </resources>

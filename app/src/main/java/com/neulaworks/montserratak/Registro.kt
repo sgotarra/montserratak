@@ -1,20 +1,18 @@
 package com.neulaworks.montserratak
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -27,6 +25,8 @@ class Registro : AppCompatActivity() {
     lateinit var  nombreEt :EditText
     lateinit var  fechaTxt :TextView
     lateinit var  Registrar : Button
+
+
 
     lateinit var auth: FirebaseAuth  //FIREBASE AUTENTIFICACIO
 
@@ -80,23 +80,8 @@ class Registro : AppCompatActivity() {
 
     }
 
-    fun RegistrarJugador (email:String, password:String)
-    {
-        this.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task: Task<AuthResult> ->
-            if (task.isSuccessful) {
-                //Registration OK
-                val firebaseUser = this.auth.currentUser!!
-                Toast.makeText( this,"createUserWithEmail:success",Toast.LENGTH_SHORT).show()
 
-            } else {
-                //Registration error
-                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
-
-            }
-        }
-    }
-
-    fun OLDRegistrarJugador(email:String, passw:String){
+    fun RegistrarJugador(email:String, passw:String){
         auth.createUserWithEmailAndPassword(email, passw)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -115,14 +100,41 @@ class Registro : AppCompatActivity() {
         //hi ha un interrogant perquè podria ser null
         if (user!=null)
         {
-            var puntuacio: Int = 0
+            var puntuacio: String = "0"
+            // Quan et registres es crea una clau única, la guardem per a identificar perfils
             var uidString: String = user.uid
             var correoString: String = correoEt.getText().toString()
             var passString: String = passEt.getText().toString()
             var nombreString: String = nombreEt.getText().toString()
             var fechaString: String= fechaTxt.getText().toString()
 
-                //AQUI GUARDARA EL CONTINGUT A LA BASE DE DADES
+            //AQUI GUARDA EL CONTINGUT A LA BASE DE DADES
+            // Utilitza un HashMap
+
+            var dadesJugador : HashMap<String,String> = HashMap<String, String> ()
+            dadesJugador.put ("Uid",uidString)
+            dadesJugador.put ("Email",correoString)
+            dadesJugador.put ("Password",passString)
+            dadesJugador.put ("Nom",nombreString)
+            dadesJugador.put ("Data",fechaString)
+            dadesJugador.put ("Puntuacio",puntuacio)
+
+
+            // Creem un punter a la base de dades i li donem un nom
+            var database: FirebaseDatabase = FirebaseDatabase.getInstance("https://montserratak-76f14-default-rtdb.europe-west1.firebasedatabase.app/")
+            var reference: DatabaseReference = database.getReference("DATA BASE JUGADORS")
+            if(reference!=null) {
+                Log.i ("MYTAG",reference.toString())
+                Log.i ("MYTAG", uidString)
+                Log.i ("MYTAG",dadesJugador.toString())
+                reference.child(uidString).setValue(dadesJugador)
+                Toast.makeText(this, "USUARI BEN REGISTRAT", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "ERROR BD", Toast.LENGTH_SHORT).show()
+            }
+            finish()
+
 
 
         }

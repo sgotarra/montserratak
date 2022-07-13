@@ -74,6 +74,7 @@ class Login : AppCompatActivity() {
     {
         val intent= Intent(this, Menu::class.java)
         startActivity(intent)
+        finish()
     }
 
 }

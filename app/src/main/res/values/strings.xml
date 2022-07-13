@@ -13,6 +13,8 @@
     <string name="passLogin">Password</string>
     <string name="BtnLogin">ENTRAR</string>
 
+    <string name="tancarSessio">Tancar Sessió</string>
+
 
 
 </resources>

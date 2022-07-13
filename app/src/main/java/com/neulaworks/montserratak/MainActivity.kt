@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    // Aquest mètode s'executarà quan s'obri el menu
+    // Aquest mètode s'executarà quan s'obri el mainactivity
     override fun onStart() {
         usuariLogejat()
         super.onStart()
@@ -47,19 +47,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun usuariLogejat() {
-
+    //si esta logejat l'envia de pet al menú
         if (user !=null)
         {
-            Toast.makeText(this,"Jugador logejat", Toast.LENGTH_SHORT).show()
-        }
-        else
-        {
-            val intent= Intent(this, MainActivity::class.java)
+            val intent= Intent(this, Menu::class.java)
             startActivity(intent)
             finish()
+
         }
 
+
     }
+    
 
 
 

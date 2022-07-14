@@ -1,6 +1,7 @@
 package com.neulaworks.montserratak
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -38,12 +39,22 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
+        //Aquí creem un tipus de lletra a partir de una font
+        val tf = Typeface.createFromAsset(assets,"fonts/mars.ttf")
+
         // Busquem a R els elements als que apunten les variables
         correoEt =findViewById<EditText>(R.id.correoEt)
         passEt =findViewById<EditText>(R.id.passEt)
         nombreEt =findViewById<EditText>(R.id.nombreEt)
         fechaTxt =findViewById<TextView>(R.id.fechaEt)
         Registrar =findViewById<Button>(R.id.Registrar)
+
+        Registrar.setTypeface(tf)
+        fechaTxt.setTypeface(tf)
+        nombreEt.setTypeface(tf)
+        passEt.setTypeface(tf)
+        correoEt.setTypeface(tf)
+
 
         //Instanciem el firebaseAuth
         auth = FirebaseAuth.getInstance()

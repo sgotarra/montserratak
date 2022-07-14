@@ -1,6 +1,7 @@
 package com.neulaworks.montserratak
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,8 +24,14 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         user = auth.currentUser
 
+        //Aquí creem un tipus de lletra a partir de una font
+        val tf = Typeface.createFromAsset(assets,"fonts/mars.ttf")
+
         var BTMLOGIN = findViewById<Button>(R.id.BTMLOGIN);
         var BTMREGISTRO = findViewById<Button>(R.id.BTMREGISTRO);
+
+        BTMLOGIN.setTypeface(tf)
+        BTMREGISTRO.setTypeface(tf)
 
         BTMLOGIN.setOnClickListener() {
             val intent = Intent(this, Login::class.java)

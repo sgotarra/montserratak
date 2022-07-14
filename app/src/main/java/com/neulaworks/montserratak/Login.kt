@@ -1,6 +1,7 @@
 package com.neulaworks.montserratak
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -25,10 +26,20 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        //Aquí creem un tipus de lletra a partir de una font
+        val tf = Typeface.createFromAsset(assets,"fonts/mars.ttf")
+
         // Busquem a R els elements als que apunten les variables
         correoLogin =findViewById<EditText>(R.id.correoLogin)
         passLogin =findViewById<EditText>(R.id.passLogin)
         BtnLogin =findViewById<Button>(R.id.BtnLogin)
+
+        //fem el mateix amb el text dels botons
+        correoLogin.setTypeface(tf)
+        passLogin.setTypeface(tf)
+        BtnLogin.setTypeface(tf)
+
+
 
         //Instanciem el firebaseAuth
         auth = FirebaseAuth.getInstance()

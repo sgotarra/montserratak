@@ -43,6 +43,8 @@
 
         <!-- BOTO DE ENTRAR -->
         <Button
+            android:background="@drawable/botopropi"
+            android:textColor="@color/black"
             android:id="@+id/BtnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

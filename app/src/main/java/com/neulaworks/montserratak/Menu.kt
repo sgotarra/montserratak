@@ -1,10 +1,13 @@
 package com.neulaworks.montserratak
 
 import android.content.Intent
+import android.graphics.Typeface
+import android.graphics.Typeface.Builder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -14,7 +17,15 @@ class Menu : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     var user:FirebaseUser? = null;
     lateinit var tancarSessio: Button
+    lateinit var CreditsBtn: Button
+    lateinit var PuntuacionsBtn: Button
+    lateinit var jugarBtn: Button
 
+    lateinit var miPuntuaciotxt: TextView
+    lateinit var puntuacio: TextView
+    lateinit var uid: TextView
+    lateinit var correo: TextView
+    lateinit var nom: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +34,47 @@ class Menu : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
         user =auth.currentUser
 
+        //Aquí creem un tipus de lletra a partir de una font
+        val tf = Typeface.createFromAsset(assets,"fonts/mars.ttf")
+
+
         tancarSessio =findViewById<Button>(R.id.tancarSessio)
+        CreditsBtn =findViewById<Button>(R.id.CreditsBtn)
+        PuntuacionsBtn =findViewById<Button>(R.id.PuntuacionsBtn)
+        jugarBtn =findViewById<Button>(R.id.jugarBtn)
+
+        //busquem els textos
+        miPuntuaciotxt=findViewById(R.id.miPuntuaciotxt)
+        puntuacio=findViewById(R.id.puntuacio)
+        uid=findViewById(R.id.uid)
+        correo=findViewById(R.id.correo)
+        nom=findViewById(R.id.nom)
+
+        //els hi assignem el tipus de lletra
+        miPuntuaciotxt.setTypeface(tf)
+        puntuacio.setTypeface(tf)
+        uid.setTypeface(tf)
+        correo.setTypeface(tf)
+        nom.setTypeface(tf)
+
+        //fem el mateix amb el text dels botons
+        tancarSessio.setTypeface(tf)
+        CreditsBtn.setTypeface(tf)
+        PuntuacionsBtn.setTypeface(tf)
+        jugarBtn.setTypeface(tf)
+
+
+
+
+        CreditsBtn.setOnClickListener(){
+            Toast.makeText(this,"Credits", Toast.LENGTH_SHORT).show()
+        }
+        PuntuacionsBtn.setOnClickListener(){
+            Toast.makeText(this,"Puntuacions", Toast.LENGTH_SHORT).show()
+        }
+        jugarBtn.setOnClickListener(){
+            Toast.makeText(this,"JUGAR", Toast.LENGTH_SHORT).show()
+        }
 
         tancarSessio.setOnClickListener(){
                 tancalaSessio()

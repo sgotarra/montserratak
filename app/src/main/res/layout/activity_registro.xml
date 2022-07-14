@@ -57,6 +57,8 @@
 
         <!-- BUTO DE ENTRAR -->
         <Button
+            android:background="@drawable/botopropi"
+            android:textColor="@color/black"
             android:id="@+id/Registrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

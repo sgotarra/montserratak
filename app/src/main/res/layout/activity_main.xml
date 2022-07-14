@@ -16,15 +16,20 @@
         android:gravity="center">
         <!-- botó de login -->
         <Button
+            android:background="@drawable/botopropi"
+            android:textColor="@color/black"
             android:id="@+id/BTMLOGIN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/BTMLOGIN"/>
         <!--botó de registrar-se -->
         <Button
+            android:background="@drawable/botopropi"
+            android:textColor="@color/black"
             android:id="@+id/BTMREGISTRO"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/BTMREGISTRO"
             />
 

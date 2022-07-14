@@ -11,6 +11,9 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 
 class Menu : AppCompatActivity() {
     //creem unes variables per comprovar ususari i authentificació
@@ -27,12 +30,20 @@ class Menu : AppCompatActivity() {
     lateinit var correo: TextView
     lateinit var nom: TextView
 
+    //reference serà el punter que ens envia a la base de dades de jugadors
+    lateinit var reference: DatabaseReference
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
         auth= FirebaseAuth.getInstance()
         user =auth.currentUser
+
+        // Creem un punter a la base de dades i li donem un nom
+        var database: FirebaseDatabase = FirebaseDatabase.getInstance("https://montserratak-76f14-default-rtdb.europe-west1.firebasedatabase.app/")
+        reference = database.getReference("DATA BASE JUGADORS")
 
         //Aquí creem un tipus de lletra a partir de una font
         val tf = Typeface.createFromAsset(assets,"fonts/mars.ttf")
@@ -109,6 +120,18 @@ class Menu : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+    }
+
+    private fun consulta(){
+        //busca a la base de dades tots els jugadors i selecciona el que el correo es el mateix que el del ususari
+        //un cop el trobi, recuperarem la informació per mostrar-la per pantalla
+        // l'interrogant és perquè podria ser null
+        reference.child("")
+        var query :Query = reference.orderByChild("Email").equalTo(user?.email)
+
+
+
 
     }
 

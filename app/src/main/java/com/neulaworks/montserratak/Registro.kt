@@ -119,6 +119,7 @@ class Registro : AppCompatActivity() {
             var passString: String = passEt.getText().toString()
             var nombreString: String = nombreEt.getText().toString()
             var fechaString: String= fechaTxt.getText().toString()
+            var nivell: String = "1"
 
             //AQUI GUARDA EL CONTINGUT A LA BASE DE DADES
             // Utilitza un HashMap
@@ -130,6 +131,7 @@ class Registro : AppCompatActivity() {
             dadesJugador.put ("Nom",nombreString)
             dadesJugador.put ("Data",fechaString)
             dadesJugador.put ("Puntuacio",puntuacio)
+            dadesJugador.put ("Nivell", nivell)
 
 
             // Creem un punter a la base de dades i li donem un nom

@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/puntuacio"
+            android:textSize="30sp"
             android:text="@string/puntuacio"
             android:gravity="center"/>
 
@@ -45,26 +46,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/uid"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
             android:text="@string/uid"
             android:gravity="center"/>
-
-
-        <!-- correu -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/correo"
-            android:text="@string/correo"
-            android:gravity="center"/>
-
 
         <!-- nom -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nom"
+            android:textSize="25sp"
             android:text="@string/nom"
             android:gravity="center"/>
+
+        <!-- correu -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/correo"
+            android:textSize="20sp"
+            android:text="@string/correo"
+            android:gravity="center"/>
+
+
+
 
         <!-- BOTO DE jugar -->
         <Button

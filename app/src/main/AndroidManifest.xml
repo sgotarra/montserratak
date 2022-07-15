@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Montserratak">
         <activity
+            android:name=".PrimerNivell"
+            android:exported="false" />
+        <activity
+            android:name=".SeleccioNivell"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity

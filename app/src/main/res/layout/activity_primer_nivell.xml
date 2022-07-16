@@ -6,4 +6,115 @@
     android:layout_height="match_parent"
     tools:context=".PrimerNivell">
 
+    <ImageView
+        android:id="@+id/fondomontse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/fondobosc" />
+
+    <ImageButton
+        android:id="@+id/imbtn5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/fondomontse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:layout_constraintWidth_percent="0.32"
+        app:srcCompat="@drawable/bbaixcenet"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imbtn4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+
+        app:layout_constraintEnd_toStartOf="@+id/imbtn5"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintWidth_percent="0.32"
+        app:srcCompat="@drawable/bbaixesquet" />
+
+    <ImageButton
+        android:id="@+id/imbtn6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+
+        app:layout_constraintStart_toEndOf="@+id/imbtn5"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintWidth_percent="0.32"
+
+        app:srcCompat="@drawable/bbaixdretet"
+         />
+
+    <ImageButton
+        android:id="@+id/imbtn2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imbtn5"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHeight_percent="0.40"
+
+        app:layout_constraintWidth_percent="0.32"
+        app:srcCompat="@drawable/baltcenet" />
+
+    <ImageButton
+        android:id="@+id/imbtn1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/imbtn4"
+        app:layout_constraintEnd_toStartOf="@+id/imbtn2"
+
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintWidth_percent="0.32"
+        app:srcCompat="@drawable/baltesqet" />
+
+    <ImageButton
+        android:id="@+id/imbtn3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/imbtn6"
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintStart_toEndOf="@+id/imbtn2"
+        app:layout_constraintWidth_percent="0.32"
+        app:srcCompat="@drawable/baltdretet" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

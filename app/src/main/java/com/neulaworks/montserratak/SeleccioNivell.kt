@@ -1,12 +1,13 @@
 package com.neulaworks.montserratak
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 
-var NOM: String =""
+    var NOM: String =""
     var PUNTUACIO: String=""
     var UID: String=""
     var NIVELL: String=""
@@ -17,12 +18,14 @@ var NOM: String =""
 
 
 
+
+
 class SeleccioNivell : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seleccio_nivell)
         //ara recuperarem els valors
-        var intent:Bundle? = getIntent().extras
+        var intent:Bundle? = intent.extras
         UID = intent?.get("UID").toString()
         NOM = intent?.get("NOM").toString()
         PUNTUACIO = intent?.get("PUNTUACIO").toString()
@@ -64,6 +67,19 @@ class SeleccioNivell : AppCompatActivity() {
         }
 
 
+        imageButton1.setOnClickListener(){
+
+            //hem d'enviar el id, el nom i el contador, i el nivell
+            val intent= Intent(this, PrimerNivell::class.java)
+            intent.putExtra("UID",UID)
+            intent.putExtra("NOM",NOM)
+            intent.putExtra("PUNTUACIO",PUNTUACIO)
+            intent.putExtra("NIVELL",NIVELL)
+            startActivity(intent)
+            finish()
+
+
+        }
 
 
 

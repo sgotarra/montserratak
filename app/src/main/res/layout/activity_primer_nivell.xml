@@ -10,13 +10,13 @@
         android:id="@+id/fondomontse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:scaleType="fitXY"
         app:srcCompat="@drawable/fondobosc" />
 
     <ImageButton
@@ -42,13 +42,13 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
 
-        app:layout_constraintEnd_toStartOf="@+id/imbtn5"
-
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.98"
 
+        app:layout_constraintEnd_toStartOf="@+id/imbtn5"
         app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.98"
         app:layout_constraintWidth_percent="0.32"
         app:srcCompat="@drawable/bbaixesquet" />
 
@@ -59,17 +59,16 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
 
-        app:layout_constraintStart_toEndOf="@+id/imbtn5"
-
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.98"
 
         app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintStart_toEndOf="@+id/imbtn5"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.98"
         app:layout_constraintWidth_percent="0.32"
 
-        app:srcCompat="@drawable/bbaixdretet"
-         />
+        app:srcCompat="@drawable/bbaixdretet" />
 
     <ImageButton
         android:id="@+id/imbtn2"
@@ -78,11 +77,11 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
 
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imbtn5"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHeight_percent="0.40"
+
+        app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintWidth_percent="0.32"
         app:srcCompat="@drawable/baltcenet" />
@@ -106,15 +105,78 @@
         android:id="@+id/imbtn3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="44dp"
         android:background="@android:color/transparent"
+
         android:scaleType="fitXY"
-
-
         app:layout_constraintBottom_toTopOf="@+id/imbtn6"
         app:layout_constraintHeight_percent="0.40"
         app:layout_constraintStart_toEndOf="@+id/imbtn2"
         app:layout_constraintWidth_percent="0.32"
         app:srcCompat="@drawable/baltdretet" />
+
+    <TextView
+        android:id="@+id/puntuacioTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:text="@string/puntuacioTxt"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.40" />
+
+    <TextView
+        android:id="@+id/countdownTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:text="@string/countdownTxt"
+        android:textColor="#fdfd04"
+        android:textSize="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.40" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+
+        android:background="@drawable/botopropi"
+        android:text="@string/btnStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.40" />
+
+    <Button
+        android:id="@+id/continuarBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:background="@drawable/botopropi"
+        android:text="@string/continuarBtn"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondomontse"
+        app:layout_constraintVertical_bias="0.926" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

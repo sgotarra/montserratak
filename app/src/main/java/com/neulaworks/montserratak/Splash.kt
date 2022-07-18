@@ -8,7 +8,7 @@ import java.util.Timer
 import kotlin.concurrent.schedule
 
 class Splash : AppCompatActivity() {
-    private val duracio: Long=10000
+    private val duracio: Long=4000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

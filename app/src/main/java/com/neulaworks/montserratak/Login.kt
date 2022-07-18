@@ -34,9 +34,9 @@ class Login : AppCompatActivity() {
         passLogin =findViewById<EditText>(R.id.passLogin)
         BtnLogin =findViewById<Button>(R.id.BtnLogin)
 
-        //fem el mateix amb el text dels botons
-        correoLogin.setTypeface(tf)
-        passLogin.setTypeface(tf)
+
+        //correoLogin.setTypeface(tf)
+        //passLogin.setTypeface(tf)
         BtnLogin.setTypeface(tf)
 
 

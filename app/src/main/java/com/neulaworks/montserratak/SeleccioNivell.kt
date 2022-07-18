@@ -3,14 +3,15 @@ package com.neulaworks.montserratak
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 
-    var NOM: String =""
-    var PUNTUACIO: String=""
-    var UID: String=""
-    var NIVELL: String=""
+private var NOM: String =""
+private var PUNTUACIO: String=""
+private var UID: String=""
+private var NIVELL: String=""
 
     lateinit var imageButton1 :ImageButton
     lateinit var imageButton2 :ImageButton
@@ -30,6 +31,8 @@ class SeleccioNivell : AppCompatActivity() {
         NOM = intent?.get("NOM").toString()
         PUNTUACIO = intent?.get("PUNTUACIO").toString()
         NIVELL = intent?.get("NIVELL").toString()
+        Log.i("DEBUG", "UID rebut a Seleccio Nivell:")
+        Log.i("DEBUG", UID)
 
         //busco els 3 butons
         imageButton1 = findViewById(R.id.imageButton)
@@ -71,10 +74,13 @@ class SeleccioNivell : AppCompatActivity() {
 
             //hem d'enviar el id, el nom i el contador, i el nivell
             val intent= Intent(this, PrimerNivell::class.java)
+
             intent.putExtra("UID",UID)
             intent.putExtra("NOM",NOM)
             intent.putExtra("PUNTUACIO",PUNTUACIO)
             intent.putExtra("NIVELL",NIVELL)
+            Log.i("DEBUG", "UID enviat:")
+            Log.i("DEBUG", UID)
             startActivity(intent)
             finish()
 

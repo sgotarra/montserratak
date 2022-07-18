@@ -24,5 +24,12 @@
     <string name="PuntuacionsBtn">Puntuacions</string>
     <string name="CreditsBtn">Crèdits</string>
 
+    <!-- strings PrimerNivell -->
+    <string name="btnStart">START</string>
+    <string name="puntuacioTxt"> -- </string>
+    <string name="countdownTxt"> -- </string>
+
+    <string name="punts"> punts</string>
+    <string name="continuarBtn">Continuar</string>
 
 </resources>

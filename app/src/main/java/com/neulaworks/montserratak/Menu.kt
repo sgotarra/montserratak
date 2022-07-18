@@ -17,6 +17,7 @@ class Menu : AppCompatActivity() {
     //creem unes variables per comprovar ususari i authentificació
     lateinit var auth: FirebaseAuth
     var user:FirebaseUser? = null;
+
     lateinit var tancarSessio: Button
     lateinit var CreditsBtn: Button
     lateinit var PuntuacionsBtn: Button
@@ -42,6 +43,7 @@ class Menu : AppCompatActivity() {
 
         auth= FirebaseAuth.getInstance()
         user =auth.currentUser
+        //recupera el usuari
 
         // Creem un punter a la base de dades i li donem un nom
         var database: FirebaseDatabase = FirebaseDatabase.getInstance("https://montserratak-76f14-default-rtdb.europe-west1.firebasedatabase.app/")
@@ -67,8 +69,8 @@ class Menu : AppCompatActivity() {
         miPuntuaciotxt.setTypeface(tf)
         puntuacio.setTypeface(tf)
         uid.setTypeface(tf)
-        correo.setTypeface(tf)
-        nom.setTypeface(tf)
+        //correo.setTypeface(tf)
+        //nom.setTypeface(tf)
 
         //fem el mateix amb el text dels botons
         tancarSessio.setTypeface(tf)
@@ -81,10 +83,18 @@ class Menu : AppCompatActivity() {
         jugarBtn.setOnClickListener(){
 
             //hem d'enviar el id, el nom i el contador, i el nivell
-            var Uids : String =  uid.toString()
-            var noms : String = nom.toString()
-            var puntuacios : String = puntuacio.toString()
-            var nivells : String = nivell.toString()
+            var Uids : String =  uid.getText().toString()
+            var noms : String = nom.getText().toString()
+            var puntuacios : String = puntuacio.getText().toString()
+            var nivells : String = nivell
+
+            Log.i("DEBUG", "UID enviat a MENU:")
+            Log.i("DEBUG", Uids)
+            Log.i("DEBUG", "NOM enviat a MENU:")
+            Log.i("DEBUG", noms)
+            Log.i("DEBUG", "Puntuacio enviat a MENU:")
+            Log.i("DEBUG", puntuacios)
+
             val intent= Intent(this, SeleccioNivell::class.java)
             intent.putExtra("UID",Uids)
             intent.putExtra("NOM",noms)
@@ -206,7 +216,7 @@ class Menu : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.e ("ERROR","ERROR DATABASE CANCEL")
+                Log.e ("ERROR","ERROR DATABASE HA CANCEL·LAT ACCIÓ")
 
             }
         })

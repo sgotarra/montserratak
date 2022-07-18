@@ -51,9 +51,9 @@ class Registro : AppCompatActivity() {
 
         Registrar.setTypeface(tf)
         fechaTxt.setTypeface(tf)
-        nombreEt.setTypeface(tf)
-        passEt.setTypeface(tf)
-        correoEt.setTypeface(tf)
+        //nombreEt.setTypeface(tf)
+        //passEt.setTypeface(tf)
+        //correoEt.setTypeface(tf)
 
 
         //Instanciem el firebaseAuth

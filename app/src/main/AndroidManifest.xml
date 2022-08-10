@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Montserratak">
+
         <activity
             android:name=".PrimerNivell"
             android:exported="false" />

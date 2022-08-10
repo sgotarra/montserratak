@@ -71,26 +71,28 @@ class SeleccioNivell : AppCompatActivity() {
 
 
         imageButton1.setOnClickListener(){
-
-            //hem d'enviar el id, el nom i el contador, i el nivell
-            val intent= Intent(this, PrimerNivell::class.java)
-
-            intent.putExtra("UID",UID)
-            intent.putExtra("NOM",NOM)
-            intent.putExtra("PUNTUACIO",PUNTUACIO)
-            intent.putExtra("NIVELL",NIVELL)
-            Log.i("DEBUG", "UID enviat:")
-            Log.i("DEBUG", UID)
-            startActivity(intent)
-            finish()
-
-
+                canviaNivell()
         }
-
-
-
-
-
-
+        imageButton2.setOnClickListener(){
+            canviaNivell()
+        }
+        imageButton3.setOnClickListener(){
+            canviaNivell()
+        }
     }
+
+    private fun canviaNivell() {
+        //hem d'enviar el id, el nom i el contador, i el nivell
+        val intent= Intent(this, PrimerNivell::class.java)
+        intent.putExtra("UID",UID)
+        intent.putExtra("NOM",NOM)
+        intent.putExtra("PUNTUACIO",PUNTUACIO)
+        intent.putExtra("NIVELL",NIVELL)
+        Log.i("DEBUG", "UID enviat:")
+        Log.i("DEBUG", UID)
+        startActivity(intent)
+        finish()
+    }
+
+
 }

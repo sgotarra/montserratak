@@ -92,7 +92,17 @@ class PrimerNivell : AppCompatActivity() {
 
         time_in_milli_seconds = 100000L  //100 segons
 
-        if (NIVELL.compareTo("1")==0) puntsactuals=0  //si es el nivell 1 llavors posaa els punts a 0
+        var fondo:ImageView = findViewById(R.id.fondomontse)
+        if (NIVELL.compareTo("2")==0) { fondo.setImageResource(R.drawable.fondomonestir)}
+        if (NIVELL.compareTo("3")==0) { fondo.setImageResource(R.drawable.fondocel)}
+
+        if (NIVELL.compareTo("1")==0) {
+            puntsactuals = 0
+            //si es el nivell 1 llavors posaa els punts a 0
+            }else {
+            puntsactuals=PUNTUACIO.toInt()
+            }
+
 
         puntuacioTxt.setText(puntsactuals.toString())
         mostra_imatges()
@@ -215,12 +225,15 @@ class PrimerNivell : AppCompatActivity() {
 
             override fun onTick(millisUntilFinished: Long) {
                 // mostro el valor a countdownTxt
+                var segonsCanvi =3f
                 val segons:Long = millisUntilFinished/1000
                 countdownTxt.setText(segons.toString())
                 Log.i("DEBUG", "COUNTDOWN")
 
-                //cada 2 segons canvio_imatges
-                if ((segons.toFloat() % 2f)==0f)canvio_imatges()
+                if (NIVELL.compareTo("2")==0) { segonsCanvi=2f}
+                if (NIVELL.compareTo("3")==0) { segonsCanvi=1f}
+                //cada x segons canvio_imatges
+                if ((segons.toFloat() % segonsCanvi)==0f)canvio_imatges()
             }
         }
         countdown_timer.start()
@@ -235,7 +248,29 @@ class PrimerNivell : AppCompatActivity() {
         val formatter = SimpleDateFormat.getDateInstance()
         val formatedDate = formatter.format(date)
 
-        var nivell:String ="1"  // canviar quan tinguem fets nivell 2 i nivell 3
+        var nivell:String ="1"
+        var guanya: Boolean =false //true si es guanya
+        var fondo:ImageView = findViewById(R.id.fondomontse)
+
+        if (NIVELL.toInt()==1 && puntsactuals>300){ guanya=true}
+        if (NIVELL.toInt()==2 && puntsactuals>600){ guanya =true}
+        if (NIVELL.toInt()==3 && puntsactuals>1000){guanya =true}
+
+        if (guanya){
+            Log.i ("DEBUG","mostra victory")
+            //canvia la imatge per victory
+            fondo.setImageResource(R.drawable.victory)
+            if (NIVELL.toInt()==1) {nivell="2"}
+            if (NIVELL.toInt()==2) {nivell="3"}
+            if (NIVELL.toInt()==3) {nivell="1"}   //Torna a començar
+        }
+        else{
+            Log.i ("DEBUG","mostra defeat")
+            fondo.setImageResource(R.drawable.defeat)
+            nivell="1"
+            //canvia la imatge per defeat
+        }
+
 
         //grava les dades del jugador  (puntuació, nivell i Data)
         //accedint directament al punt del arbre de dades que volem anar, podem modificar
@@ -249,18 +284,6 @@ class PrimerNivell : AppCompatActivity() {
 
         //crida al mètode de mostra imatges
         mostra_imatges()
-
-        var fondo:ImageView = findViewById(R.id.fondomontse)
-        if (puntsactuals>500){
-            Log.i ("DEBUG","mostra victory")
-            //canvia la imatge per victory
-            fondo.setImageResource(R.drawable.victory)
-     }
-        else{
-            Log.i ("DEBUG","mostra defeat")
-            fondo.setImageResource(R.drawable.defeat)
-            //canvia la imatge per defeat
-        }
 
         //ja hem gravat les dades
         //ara mostrem el botó de continuar

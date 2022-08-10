@@ -24,7 +24,6 @@ var time_in_milli_seconds = 0L
 var contingut_botons = arrayOf(0,0,0,0,0,0)  //poden ser 0 "res",  1 "alien", 2 "human"
 
 
-
 //Image Bottons
 
 lateinit var  imbtn1 : ImageButton
@@ -90,7 +89,8 @@ class PrimerNivell : AppCompatActivity() {
 
 
 
-        time_in_milli_seconds = 100000L  //100 segons
+        //time_in_milli_seconds = 100000L  //100 segons
+        time_in_milli_seconds = 60000L  //60 segons
 
         var fondo:ImageView = findViewById(R.id.fondomontse)
         if (NIVELL.compareTo("2")==0) { fondo.setImageResource(R.drawable.fondomonestir)}
@@ -252,9 +252,10 @@ class PrimerNivell : AppCompatActivity() {
         var guanya: Boolean =false //true si es guanya
         var fondo:ImageView = findViewById(R.id.fondomontse)
 
-        if (NIVELL.toInt()==1 && puntsactuals>300){ guanya=true}
-        if (NIVELL.toInt()==2 && puntsactuals>600){ guanya =true}
-        if (NIVELL.toInt()==3 && puntsactuals>1000){guanya =true}
+
+        if (NIVELL.toInt()==1 && puntsactuals>150){ guanya=true}
+        if (NIVELL.toInt()==2 && puntsactuals>300){ guanya =true}
+        if (NIVELL.toInt()==3 && puntsactuals>500){guanya =true}
 
         if (guanya){
             Log.i ("DEBUG","mostra victory")
@@ -267,7 +268,7 @@ class PrimerNivell : AppCompatActivity() {
         else{
             Log.i ("DEBUG","mostra defeat")
             fondo.setImageResource(R.drawable.defeat)
-            nivell="1"
+            nivell=NIVELL
             //canvia la imatge per defeat
         }
 

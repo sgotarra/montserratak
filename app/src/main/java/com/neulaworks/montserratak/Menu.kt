@@ -5,12 +5,15 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
+import java.lang.Exception
 
 
 class Menu : AppCompatActivity() {
@@ -22,12 +25,17 @@ class Menu : AppCompatActivity() {
     lateinit var CreditsBtn: Button
     lateinit var PuntuacionsBtn: Button
     lateinit var jugarBtn: Button
+    lateinit var editarBtn: Button
 
     lateinit var miPuntuaciotxt: TextView
     lateinit var puntuacio: TextView
     lateinit var uid: TextView
     lateinit var correo: TextView
     lateinit var nom: TextView
+    lateinit var edat: TextView
+    lateinit var poblacio: TextView
+
+    lateinit var imatgePerfil: ImageView
 
     private var nivell ="1"
 
@@ -57,6 +65,7 @@ class Menu : AppCompatActivity() {
         CreditsBtn =findViewById<Button>(R.id.CreditsBtn)
         PuntuacionsBtn =findViewById<Button>(R.id.PuntuacionsBtn)
         jugarBtn =findViewById<Button>(R.id.jugarBtn)
+        editarBtn = findViewById<Button>(R.id.editarBtn)
 
         //busquem els textos
         miPuntuaciotxt=findViewById(R.id.miPuntuaciotxt)
@@ -64,6 +73,11 @@ class Menu : AppCompatActivity() {
         uid=findViewById(R.id.uid)
         correo=findViewById(R.id.correo)
         nom=findViewById(R.id.nom)
+        edat=findViewById(R.id.edat)
+        poblacio=findViewById(R.id.poblacio)
+
+        imatgePerfil=findViewById(R.id.imatgePerfil)
+
 
         //els hi assignem el tipus de lletra
         miPuntuaciotxt.setTypeface(tf)
@@ -77,6 +91,7 @@ class Menu : AppCompatActivity() {
         CreditsBtn.setTypeface(tf)
         PuntuacionsBtn.setTypeface(tf)
         jugarBtn.setTypeface(tf)
+        editarBtn.setTypeface(tf)
 
         consulta()
 
@@ -105,6 +120,11 @@ class Menu : AppCompatActivity() {
 
 
         }
+
+        editarBtn.setOnClickListener(){
+            Toast.makeText(this,"EDITAR", Toast.LENGTH_SHORT).show()
+        }
+
 
         CreditsBtn.setOnClickListener(){
 
@@ -204,6 +224,15 @@ class Menu : AppCompatActivity() {
                             correo.setText( ds.child("Email").getValue().toString())
                             nom.setText( ds.child("Nom").getValue().toString())
                             nivell = ds.child("Nivell").getValue().toString()
+                            poblacio.setText( ds.child("Poblacio").getValue().toString())
+                            edat.setText( ds.child("Edat").getValue().toString())
+                            var imatge: String  = ds.child("Imatge").getValue().toString()
+
+                            try {
+                                Picasso.get().load(imatge).into(imatgePerfil)
+                            } catch (e:Exception){
+                                Picasso.get().load(R.drawable.jugador).into(imatgePerfil)
+                            }
 
                         }
                         if (!trobat)

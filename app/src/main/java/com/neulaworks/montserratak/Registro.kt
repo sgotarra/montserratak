@@ -28,6 +28,9 @@ class Registro : AppCompatActivity() {
     lateinit var  fechaTxt :TextView
     lateinit var  Registrar : Button
 
+    lateinit var  edatEt :EditText
+    lateinit var  poblacioEt :EditText
+
 
 
     lateinit var auth: FirebaseAuth  //FIREBASE AUTENTIFICACIO
@@ -48,6 +51,8 @@ class Registro : AppCompatActivity() {
         nombreEt =findViewById<EditText>(R.id.nombreEt)
         fechaTxt =findViewById<TextView>(R.id.fechaEt)
         Registrar =findViewById<Button>(R.id.Registrar)
+        edatEt =findViewById<EditText>(R.id.edatEt)
+        poblacioEt =findViewById<EditText>(R.id.poblacioEt)
 
         Registrar.setTypeface(tf)
         fechaTxt.setTypeface(tf)
@@ -121,6 +126,10 @@ class Registro : AppCompatActivity() {
             var fechaString: String= fechaTxt.getText().toString()
             var nivell: String = "1"
 
+            var edatString = edatEt.getText().toString()
+            var poblacioString = poblacioEt.getText().toString()
+
+
             //AQUI GUARDA EL CONTINGUT A LA BASE DE DADES
             // Utilitza un HashMap
 
@@ -130,6 +139,9 @@ class Registro : AppCompatActivity() {
             dadesJugador.put ("Password",passString)
             dadesJugador.put ("Nom",nombreString)
             dadesJugador.put ("Data",fechaString)
+            dadesJugador.put ("Edat",edatString)
+            dadesJugador.put ("Poblacio",poblacioString)
+            dadesJugador.put ("Imatge","")
             dadesJugador.put ("Puntuacio",puntuacio)
             dadesJugador.put ("Nivell", nivell)
 

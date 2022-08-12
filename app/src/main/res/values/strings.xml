@@ -1,18 +1,25 @@
 <resources>
     <string name="app_name">montserratak</string>
 
+    <!-- Main Activity -->
     <string name="BTMLOGIN">Login</string>
     <string name="BTMREGISTRO">Registre</string>
+
+    <!-- Activitat registre -->
     <string name="correoEt">E-mail</string>
     <string name="nombreEt">Nom</string>
     <string name="passEt">Password</string>
     <string name="fechaTxt">Data</string>
     <string name="Registrar">REGISTRAR</string>
+    <string name="edatEt">Edat</string>
+    <string name="poblacioEt">Població</string>
 
+    <!-- Activity Login -->
     <string name="correoLogin">E-mail</string>
     <string name="passLogin">Password</string>
     <string name="BtnLogin">ENTRAR</string>
 
+    <!-- Activituy Menu -->
     <string name="tancarSessio">Tancar Sessió</string>
     <string name="miPuntuaciotxt">Puntuació</string>
     <string name="puntuacio"> -- </string>
@@ -21,8 +28,12 @@
     <string name="nom"> -- </string>
     <string name="MenuTxt">MENÚ</string>
     <string name="jugarBtn">Jugar</string>
+    <string name="editarBtn">Editar</string>
     <string name="PuntuacionsBtn">Puntuacions</string>
     <string name="CreditsBtn">Crèdits</string>
+    <string name="edat"> -- </string>
+    <string name="poblacio"> -- </string>
+
 
     <!-- strings PrimerNivell -->
     <string name="btnStart">START</string>
